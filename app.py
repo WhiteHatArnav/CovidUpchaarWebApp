@@ -24,19 +24,19 @@ rLtoTn = 0.00114
 PolyRegCases = 4
 PolyRegOxy = 3
 # input variables (dynamic input)
-indic = (input("Would you like to enter your own data? Type Y/N: "))
-if indic == 'Y':
-    VolOxyReqPerson =  float(input("Enter Daily Anticipated Oxygen needed per person in liter (Human Avg is 500 to 550 liters): "))
-    rOxSup = float(input("Enter proportion of patients that would need oxygen  support (typically 0.03 to 0.04): "))
-    PolyRegCases = int(input("What degree of polynomial would you like to regress the new and total active cases prediction to? Please enter an integer (recommended:  4): " ))
-    PolyRegOxy = int(input("What degree of polynomial would you like to regress the oxygen supply prediction to? Please enter an integer (recommended:  3): " ))
-    # dynamic code based input of statewise data not included yet but can later be included for potential future use
+# indic = (input("Would you like to enter your own data? Type Y/N: "))
+# if indic == 'Y':
+#     VolOxyReqPerson =  float(input("Enter Daily Anticipated Oxygen needed per person in liter (Human Avg is 500 to 550 liters): "))
+#     rOxSup = float(input("Enter proportion of patients that would need oxygen  support (typically 0.03 to 0.04): "))
+#     PolyRegCases = int(input("What degree of polynomial would you like to regress the new and total active cases prediction to? Please enter an integer (recommended:  4): " ))
+#     PolyRegOxy = int(input("What degree of polynomial would you like to regress the oxygen supply prediction to? Please enter an integer (recommended:  3): " ))
+#     # dynamic code based input of statewise data not included yet but can later be included for potential future use
 
-if indic == 'N':
-    print("\nScript will proceed with default values gathered on 27th of April, 2021 for India from online sources\n")
+# if indic == 'N':
+#     print("\nScript will proceed with default values gathered on 27th of April, 2021 for India from online sources\n")
 
-else:
-    print("\nInvalid Input (user did not type Y or N). Script will proceed with default values gathered on 27th of April, 2021 for India from online sources\n")
+# else:
+#     print("\nInvalid Input (user did not type Y or N). Script will proceed with default values gathered on 27th of April, 2021 for India from online sources\n")
 
 TotalActiveCaseList = [0]*durationToPeak
 TotalActiveCaseList[0] = nCurrentActiveCases

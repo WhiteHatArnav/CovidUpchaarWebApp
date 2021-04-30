@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request, redirect
 import io
 import base64
 import numpy as np
@@ -102,13 +102,14 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    
-    return """<xmp>
-              Welcome to the Homepage of the OxygenDemandPredictor of the CovidUpchaar App
+    base = request.base_url
+    return redirect(base+"/activecases", code=302)
+    # """<xmp>
+    #           Welcome to the Homepage of the OxygenDemandPredictor of the CovidUpchaar App
 
-              To view the  predictive plot of Active Covid-19-cases please type activecovidcases after the homepage link in the url bar.
+    #           To view the  predictive plot of Active Covid-19-cases please type activecovidcases after the homepage link in the url bar.
               
-              To view the  predictive plot of Active Covid-19-cases please type oxydemand after the homepage link in the url bar.</xmp>"""
+    #           To view the  predictive plot of Active Covid-19-cases please type oxydemand after the homepage link in the url bar.</xmp>"""
 
 @app.route("/activecases")
 def activeCases():

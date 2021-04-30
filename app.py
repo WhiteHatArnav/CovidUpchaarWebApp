@@ -106,9 +106,9 @@ def home():
     return  """<xmp>
                Welcome to the Homepage of the OxygenDemandPredictor of the CovidUpchaar App
 
-               To view the  predictive plot of Active Covid-19-cases please type activecases after the homepage link in the url bar.
+               To view the  predictive plot of Active Covid-19-cases please type /activecases after the homepage link in the url bar.
               
-    #          To view the  predictive plot of Active Covid-19-cases please type oxydemand after the homepage link in the url bar.</xmp>"""
+    #          To view the  predictive plot of Active Covid-19-cases please type /oxydemand after the homepage link in the url bar.</xmp>"""
 
 @app.route("/activecases")
 def activeCases():

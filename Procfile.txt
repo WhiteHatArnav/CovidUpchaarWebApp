@@ -1,1 +1,1 @@
-web: gunicorn app.py:CovidUpchaarOxyDemand
+web: gunicorn app:CovidUpchaarOxyDemand

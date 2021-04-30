@@ -1,1 +1,1 @@
-web: gunicorn app.py:OxyDemandApp
+web: gunicorn app:app

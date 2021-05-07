@@ -98,7 +98,7 @@ OxyR2 = r2_score(massOxSupNeed[0:17], OxyModel(range(1,18)))
 
 
 app = Flask(__name__)
-
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route("/")
 def home():

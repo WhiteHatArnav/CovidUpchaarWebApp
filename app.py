@@ -104,7 +104,7 @@ OxyR2 = r2_score(massOxSupNeed[0:17], OxyModel(range(1,18)))
 
 
 app = Flask(__name__)
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+
 
 @app.route("/")
 def home():
@@ -122,10 +122,7 @@ def activeCases():
     img = Figure()
     ax = img.subplots()
     ax.scatter(IndexList1,RegressList)
-    ax.scatter(x, y,color = 'red' )
-    ax.plot(RealLine, RealModel(RealLine), color = 'red', label = 'Real Data Based Line') 
-    ax.plot(PolyLine, PolyModel(PolyLine), label = 'Predicted Data Based Line')
-    ax.legend()
+    ax.plot(PolyLine, PolyModel(PolyLine))
     ax.set_title('Predictive Polynomial Regression of Active Covid Cases in India', pad =20)
     ax.set_xlabel('Days from April 26th, 2021')
     ax.set_ylabel('Projected Total Active Covid-19 Cases in India')

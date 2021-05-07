@@ -84,9 +84,15 @@ for p in range(0,20):
     nDailyOxSupNeed = int(rOxSup * newCaselist[p])
     massOxSupNeed[p] = nDailyOxSupNeed * VolOxyReqPerson * rLtoTn
 
+
+x = [2, 4, 6, 8, 10]
+y = [2800000 ,3100000, 3300000, 3500000, 3700000]
+
+
 #print("\nR Squared Value for cubic polynomial best fit curve for Oxygen Demand in India April 26th through May 16th:")
 #print("{:.6f}".format(r2))
-
+RealModel = np.poly1d(np.polyfit(x,y, 2))
+RealLine = np.linspace(1, 20, 100)
 
 OxyModel = np.poly1d(np.polyfit(range(1,18),massOxSupNeed[0:17], PolyRegOxy))
 OxyLine = np.linspace(1, 17, 100)
@@ -116,7 +122,10 @@ def activeCases():
     img = Figure()
     ax = img.subplots()
     ax.scatter(IndexList1,RegressList)
-    ax.plot(PolyLine, PolyModel(PolyLine)) 
+    ax.scatter(x, y,color = 'red' )
+    ax.plot(RealLine, RealModel(RealLine), color = 'red', label = 'Real Data Based Line') 
+    ax.plot(PolyLine, PolyModel(PolyLine), label = 'Predicted Data Based Line')
+    ax.legend()
     ax.set_title('Predictive Polynomial Regression of Active Covid Cases in India', pad =20)
     ax.set_xlabel('Days from April 26th, 2021')
     ax.set_ylabel('Projected Total Active Covid-19 Cases in India')
